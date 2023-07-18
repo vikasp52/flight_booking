@@ -16,7 +16,7 @@ class _OtpValidationScreenState extends State<OtpValidationScreen> {
       body: Center(
         child: Padding(
           padding: EdgeInsets.symmetric(
-            horizontal: 16.w,
+            horizontal: 20.w,
           ),
           child: Card(
             elevation: 10,
