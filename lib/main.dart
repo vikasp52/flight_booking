@@ -1,6 +1,6 @@
 import 'package:flight_booking/core/assets/assets.dart';
 import 'package:flight_booking/core/routing/routing.dart';
-import 'package:flight_booking/features/register/presentation/screens/screens.dart';
+import 'package:flight_booking/features/validate/presentation/screens/screens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
         onGenerateRoute: RouteGenerator.generateRoute,
         debugShowCheckedModeBanner: false,
       ),
-      child: const RegisterScreen(),
+      child: const OtpValidationScreen(),
     );
   }
 }

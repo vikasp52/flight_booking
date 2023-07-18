@@ -18,7 +18,7 @@ class CustomTypography {
   static final buttonTextWhite = TextStyle(
     color: CustomColors.white,
     fontSize: 18.sp,
-    fontWeight: FontWeight.w600,
+    fontWeight: FontWeight.w500,
   );
 
   static final textFieldLabelBlack = TextStyle(
