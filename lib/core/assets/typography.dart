@@ -57,13 +57,25 @@ class CustomTypography {
     fontWeight: FontWeight.w500,
   );
 
+  static final flightType = TextStyle(
+    color: CustomColors.black,
+    fontSize: 12.sp,
+    fontWeight: FontWeight.w500,
+  );
+
+  static final flightNameLabel = TextStyle(
+    color: CustomColors.black,
+    fontSize: 16.sp,
+    fontWeight: FontWeight.w600,
+  );
+
   static final forgotPasswordBlueLabel = TextStyle(
     color: CustomColors.primary,
     fontSize: 13.sp,
     fontWeight: FontWeight.w500,
   );
 
-    static final flightTypeLabel = TextStyle(
+  static final flightTypeLabel = TextStyle(
     color: CustomColors.white,
     fontSize: 12.sp,
     fontWeight: FontWeight.w600,
@@ -73,5 +85,11 @@ class CustomTypography {
     color: CustomColors.black,
     fontSize: 20.sp,
     fontWeight: FontWeight.w600,
+  );
+
+  static final flightPrice = TextStyle(
+    color: CustomColors.primary,
+    fontSize: 20.sp,
+    fontWeight: FontWeight.w700,
   );
 }

@@ -1,5 +1,6 @@
 import 'package:flight_booking/core/assets/assets.dart';
 import 'package:flight_booking/core/routing/routing.dart';
+import 'package:flight_booking/features/flight_results/presentation/screens/screens.dart';
 import 'package:flight_booking/features/home/presentation/screens/screens.dart';
 import 'package:flight_booking/features/validate/presentation/screens/screens.dart';
 import 'package:flutter/material.dart';
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
         onGenerateRoute: RouteGenerator.generateRoute,
         debugShowCheckedModeBanner: false,
       ),
-      child: const HomeScreen(),
+      child: const FlightResultScreen(),
     );
   }
 }

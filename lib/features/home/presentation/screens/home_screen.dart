@@ -285,7 +285,7 @@ class HomeScreen extends StatelessWidget {
                                                     title: 'Infant',
                                                     subTitle: 'Under 2 yrs',
                                                     total: '3',
-                                                  ),
+                                                   ),
                                                   const Divider(
                                                     color: CustomColors.primary,
                                                   ),
