@@ -4,8 +4,8 @@ import 'package:flight_booking/features/flight_booking/presentation/screens/widg
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class FlightBooking extends StatelessWidget {
-  const FlightBooking({super.key});
+class FlightBookingScreen extends StatelessWidget {
+  const FlightBookingScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
