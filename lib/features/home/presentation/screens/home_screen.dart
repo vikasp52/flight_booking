@@ -1,4 +1,5 @@
 import 'package:flight_booking/core/assets/assets.dart';
+import 'package:flight_booking/core/common_widgets/common_widgets.dart';
 import 'package:flight_booking/features/home/presentation/screens/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -8,10 +9,6 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final subTitle = '12 yrs & above';
-    final title = 'A';
-    final total = '3';
-
     final flyingFromController = TextEditingController();
 
     return Scaffold(

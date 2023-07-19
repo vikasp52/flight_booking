@@ -8,12 +8,12 @@ class CutomTextField extends StatelessWidget {
     required this.label,
     this.enabled,
     this.onTap,
-    required this.icon,
+    this.icon,
   });
 
   final TextEditingController controller;
   final String label;
-  final IconData icon;
+  final IconData? icon;
   final GestureTapCallback? onTap;
   final bool? enabled;
 
@@ -46,9 +46,11 @@ class CutomTextField extends StatelessWidget {
             label,
             style: CustomTypography.textFieldLabel,
           ),
-          prefixIcon: Icon(
-            icon,
-          ),
+          prefixIcon: icon == null
+              ? null
+              : Icon(
+                  icon,
+                ),
         ),
       ),
     );
