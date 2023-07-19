@@ -231,12 +231,16 @@ class HomeScreen extends StatelessWidget {
                                         GestureDetector(
                                           onTap: () => showModalBottomSheet(
                                             context: context,
+                                            isScrollControlled: true,
                                             builder: (context) => Padding(
                                               padding: EdgeInsets.all(12.w),
                                               child: Column(
                                                 crossAxisAlignment:
                                                     CrossAxisAlignment.start,
                                                 children: [
+                                                  SizedBox(
+                                                    height: 20.h,
+                                                  ),
                                                   Row(
                                                     mainAxisAlignment:
                                                         MainAxisAlignment
@@ -282,8 +286,43 @@ class HomeScreen extends StatelessWidget {
                                                     subTitle: 'Under 2 yrs',
                                                     total: '3',
                                                   ),
-
-                                                  
+                                                  const Divider(
+                                                    color: CustomColors.primary,
+                                                  ),
+                                                  RadioListTile(
+                                                    value: 1,
+                                                    groupValue: 2,
+                                                    title: const Text(
+                                                        'Premium Economy'),
+                                                    onChanged: (value) {},
+                                                  ),
+                                                  RadioListTile(
+                                                    value: 2,
+                                                    groupValue: 2,
+                                                    title:
+                                                        const Text('Economy'),
+                                                    onChanged: (value) {},
+                                                  ),
+                                                  RadioListTile(
+                                                    value: 3,
+                                                    groupValue: 2,
+                                                    title: const Text(
+                                                        'Business Class'),
+                                                    onChanged: (value) {},
+                                                  ),
+                                                  RadioListTile(
+                                                    value: 4,
+                                                    groupValue: 2,
+                                                    title: const Text('First'),
+                                                    onChanged: (value) {},
+                                                  ),
+                                                  const Spacer(),
+                                                  ElevatedButton(
+                                                    onPressed: () {},
+                                                    child: const Text(
+                                                      'Done',
+                                                    ),
+                                                  ),
                                                 ],
                                               ),
                                             ),
