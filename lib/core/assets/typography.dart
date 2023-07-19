@@ -9,6 +9,12 @@ class CustomTypography {
     fontWeight: FontWeight.w700,
   );
 
+  static final headingWhite = TextStyle(
+    color: CustomColors.white,
+    fontSize: 30.sp,
+    fontWeight: FontWeight.w700,
+  );
+
   static final titleBlue = TextStyle(
     color: CustomColors.primary,
     fontSize: 24.sp,
@@ -46,7 +52,7 @@ class CustomTypography {
   );
 
   static final accountCheckLabel = TextStyle(
-    color: CustomColors.hintText,
+    color: CustomColors.black,
     fontSize: 14.sp,
     fontWeight: FontWeight.w500,
   );
@@ -55,5 +61,17 @@ class CustomTypography {
     color: CustomColors.primary,
     fontSize: 13.sp,
     fontWeight: FontWeight.w500,
+  );
+
+    static final flightTypeLabel = TextStyle(
+    color: CustomColors.white,
+    fontSize: 12.sp,
+    fontWeight: FontWeight.w600,
+  );
+
+  static final nameLabel = TextStyle(
+    color: CustomColors.black,
+    fontSize: 20.sp,
+    fontWeight: FontWeight.w600,
   );
 }
