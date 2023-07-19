@@ -1,4 +1,5 @@
 import 'package:flight_booking/core/assets/assets.dart';
+import 'package:flight_booking/core/routing/routing.dart';
 import 'package:flight_booking/features/flight_results/presentation/screens/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -25,7 +26,7 @@ class FlightResultScreen extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       IconButton(
-                        onPressed: () {},
+                        onPressed: () => Navigator.pop(context),
                         icon: const Icon(
                           Icons.arrow_back,
                           color: CustomColors.white,
@@ -121,161 +122,178 @@ class FlightResultScreen extends StatelessWidget {
                     padding: EdgeInsets.symmetric(
                       horizontal: 10.w,
                     ),
-                    itemBuilder: (context, index) => Card(
-                      child: Padding(
-                        padding: EdgeInsets.all(
-                          10.w,
+                    itemBuilder: (context, index) => Padding(
+                      padding: EdgeInsets.all(8.h),
+                      child: InkWell(
+                        onTap: () => RouteGenerator.pushName(
+                          routeName: RouteGenerator.flightBookingRoute,
                         ),
-                        child: Column(
-                          children: [
-                            ListTile(
-                              leading: const CircleAvatar(
-                                child: Icon(Icons.flag),
-                              ),
-                              title: Text(
-                                'Emirates',
-                                style: CustomTypography.flightNameLabel,
-                              ),
-                              trailing: Text(
-                                '\$520.43',
-                                style: CustomTypography.flightPrice,
-                              ),
+                        child: Card(
+                          elevation: 8.0,
+                          child: Padding(
+                            padding: EdgeInsets.all(
+                              10.w,
                             ),
-                            SizedBox(
-                              height: 10.h,
-                            ),
-                            Padding(
-                              padding: EdgeInsets.symmetric(
-                                horizontal: 28.w,
-                              ),
-                              child: Column(
-                                children: [
-                                  Row(
-                                    children: [
-                                      Text(
-                                        'DXB',
-                                        style:
-                                            CustomTypography.accountCheckLabel,
-                                      ),
-                                      const Spacer(),
-                                      Text(
-                                        'LEH',
-                                        style:
-                                            CustomTypography.accountCheckLabel,
-                                      ),
-                                    ],
+                            child: Column(
+                              children: [
+                                ListTile(
+                                  leading: const CircleAvatar(
+                                    child: Icon(Icons.flag),
                                   ),
-                                  Row(
+                                  title: Text(
+                                    'Emirates',
+                                    style: CustomTypography.flightNameLabel,
+                                  ),
+                                  trailing: Text(
+                                    '\$520.43',
+                                    style: CustomTypography.flightPrice,
+                                  ),
+                                ),
+                                SizedBox(
+                                  height: 10.h,
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.symmetric(
+                                    horizontal: 28.w,
+                                  ),
+                                  child: Column(
                                     children: [
-                                      const LocationPoint(),
-                                      Expanded(
-                                        child: Row(
-                                          children: List.generate(
-                                            150 ~/ 2,
-                                            (index) {
-                                              if (index % 2 == 0) {
-                                                return Expanded(
-                                                  child: Container(
-                                                    color: Colors.transparent,
-                                                    height: 2.h,
-                                                  ),
-                                                );
-                                              } else if (index ==
-                                                  (150 ~/ 2) ~/ 2) {
-                                                return Flexible(
-                                                  child: Padding(
-                                                    padding: EdgeInsets.only(
-                                                      bottom: 8.h,
-                                                    ),
-                                                    child: Text(
-                                                      '✈︎',
-                                                      style: TextStyle(
+                                      Row(
+                                        children: [
+                                          Text(
+                                            'DXB',
+                                            style: CustomTypography
+                                                .accountCheckLabel,
+                                          ),
+                                          const Spacer(),
+                                          Text(
+                                            'LEH',
+                                            style: CustomTypography
+                                                .accountCheckLabel,
+                                          ),
+                                        ],
+                                      ),
+                                      Row(
+                                        children: [
+                                          const LocationPoint(),
+                                          Expanded(
+                                            child: Row(
+                                              children: List.generate(
+                                                150 ~/ 2,
+                                                (index) {
+                                                  if (index % 2 == 0) {
+                                                    return Expanded(
+                                                      child: Container(
+                                                        color:
+                                                            Colors.transparent,
+                                                        height: 2.h,
+                                                      ),
+                                                    );
+                                                  } else if (index ==
+                                                      (150 ~/ 2) ~/ 2) {
+                                                    return Flexible(
+                                                      child: Padding(
+                                                        padding:
+                                                            EdgeInsets.only(
+                                                          bottom: 8.h,
+                                                        ),
+                                                        child: Text(
+                                                          '✈︎',
+                                                          style: TextStyle(
+                                                            color: CustomColors
+                                                                .primary,
+                                                            fontSize: 30.sp,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    );
+                                                  } else {
+                                                    return Expanded(
+                                                      child: Container(
                                                         color: CustomColors
                                                             .primary,
-                                                        fontSize: 30.sp,
+                                                        height: 2.h,
                                                       ),
-                                                    ),
-                                                  ),
-                                                );
-                                              } else {
-                                                return Expanded(
-                                                  child: Container(
-                                                    color: CustomColors.primary,
-                                                    height: 2.h,
-                                                  ),
-                                                );
-                                              }
-                                            },
+                                                    );
+                                                  }
+                                                },
+                                              ),
+                                            ),
                                           ),
-                                        ),
+                                          const LocationPoint(),
+                                        ],
                                       ),
-                                      const LocationPoint(),
-                                    ],
-                                  ),
-                                  Row(
-                                    children: [
-                                      Text(
-                                        '09:35',
-                                        style: CustomTypography
-                                            .accountCheckLabel
-                                            .copyWith(
-                                          color: CustomColors.grey,
-                                        ),
-                                      ),
-                                      const Spacer(),
-                                      Text(
-                                        '11:20',
-                                        style: CustomTypography
-                                            .accountCheckLabel
-                                            .copyWith(
-                                          color: CustomColors.grey,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                  SizedBox(
-                                    height: 10.h,
-                                  ),
-                                  Divider(
-                                    color: CustomColors.skyBlue,
-                                    thickness: 2.h,
-                                  ),
-                                  Row(
-                                    children: [
-                                      Chip(
-                                        backgroundColor: CustomColors.skyBlue,
-                                        label: Text(
-                                          'Economy Light',
-                                          style: CustomTypography.flightType,
-                                        ),
+                                      Row(
+                                        children: [
+                                          Text(
+                                            '09:35',
+                                            style: CustomTypography
+                                                .accountCheckLabel
+                                                .copyWith(
+                                              color: CustomColors.grey,
+                                            ),
+                                          ),
+                                          const Spacer(),
+                                          Text(
+                                            '11:20',
+                                            style: CustomTypography
+                                                .accountCheckLabel
+                                                .copyWith(
+                                              color: CustomColors.grey,
+                                            ),
+                                          ),
+                                        ],
                                       ),
                                       SizedBox(
-                                        width: 10.w,
+                                        height: 10.h,
                                       ),
-                                      Chip(
-                                        backgroundColor: CustomColors.skyBlue,
-                                        label: Text(
-                                          '💼 1 x 20 kg',
-                                          style: CustomTypography.flightType,
-                                        ),
+                                      Divider(
+                                        color: CustomColors.skyBlue,
+                                        thickness: 2.h,
                                       ),
-                                      const Spacer(),
-                                      Chip(
-                                        backgroundColor: CustomColors.primary,
-                                        label: Text(
-                                          'Select Flight',
-                                          style: CustomTypography.flightType
-                                              .copyWith(
-                                            color: CustomColors.white,
+                                      Row(
+                                        children: [
+                                          Chip(
+                                            backgroundColor:
+                                                CustomColors.skyBlue,
+                                            label: Text(
+                                              'Economy Light',
+                                              style:
+                                                  CustomTypography.flightType,
+                                            ),
                                           ),
-                                        ),
-                                      ),
+                                          SizedBox(
+                                            width: 10.w,
+                                          ),
+                                          Chip(
+                                            backgroundColor:
+                                                CustomColors.skyBlue,
+                                            label: Text(
+                                              '💼 1 x 20 kg',
+                                              style:
+                                                  CustomTypography.flightType,
+                                            ),
+                                          ),
+                                          const Spacer(),
+                                          Chip(
+                                            backgroundColor:
+                                                CustomColors.primary,
+                                            label: Text(
+                                              'Select Flight',
+                                              style: CustomTypography.flightType
+                                                  .copyWith(
+                                                color: CustomColors.white,
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      )
                                     ],
-                                  )
-                                ],
-                              ),
-                            )
-                          ],
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
                         ),
                       ),
                     ),

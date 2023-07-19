@@ -1,5 +1,6 @@
 import 'package:flight_booking/core/assets/assets.dart';
 import 'package:flight_booking/core/common_widgets/common_widgets.dart';
+import 'package:flight_booking/core/routing/routing.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -94,7 +95,9 @@ class _LoginScreenState extends State<LoginScreen> {
                       child: SizedBox(
                         width: MediaQuery.sizeOf(context).width / 3,
                         child: ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () => RouteGenerator.pushReplacement(
+                            routeName: RouteGenerator.homeRoute,
+                          ),
                           child: const Text(
                             'Login',
                           ),
@@ -112,7 +115,9 @@ class _LoginScreenState extends State<LoginScreen> {
                           style: CustomTypography.hintLabelGrey,
                         ),
                         TextButton(
-                          onPressed: () {},
+                          onPressed: () => RouteGenerator.pushName(
+                            routeName: RouteGenerator.registerationRoute,
+                          ),
                           child: Text(
                             'Create Account?',
                             style: CustomTypography.forgotPasswordBlueLabel

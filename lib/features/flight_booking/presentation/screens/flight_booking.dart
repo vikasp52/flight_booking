@@ -19,7 +19,7 @@ class FlightBookingScreen extends StatelessWidget {
           centerTitle: true,
           backgroundColor: CustomColors.primary,
           leading: IconButton(
-            onPressed: () {},
+            onPressed: () => Navigator.pop(context),
             icon: const Icon(
               Icons.arrow_back,
               color: CustomColors.white,

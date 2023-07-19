@@ -1,5 +1,6 @@
 import 'package:flight_booking/core/assets/assets.dart';
 import 'package:flight_booking/core/common_widgets/common_widgets.dart';
+import 'package:flight_booking/core/routing/routing.dart';
 import 'package:flight_booking/features/home/presentation/screens/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -282,7 +283,7 @@ class HomeScreen extends StatelessWidget {
                                                     title: 'Infant',
                                                     subTitle: 'Under 2 yrs',
                                                     total: '3',
-                                                   ),
+                                                  ),
                                                   const Divider(
                                                     color: CustomColors.primary,
                                                   ),
@@ -335,7 +336,11 @@ class HomeScreen extends StatelessWidget {
                                           height: 14.h,
                                         ),
                                         ElevatedButton(
-                                          onPressed: () {},
+                                          onPressed: () =>
+                                              RouteGenerator.pushName(
+                                            routeName: RouteGenerator
+                                                .flightResultRoute,
+                                          ),
                                           child: const Text(
                                             'Search',
                                           ),
