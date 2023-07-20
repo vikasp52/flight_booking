@@ -23,11 +23,11 @@ Map<String, dynamic> _$$_LoginResponseToJson(_$_LoginResponse instance) =>
     };
 
 _$_Data _$$_DataFromJson(Map<String, dynamic> json) => _$_Data(
-      userId: json['userId'] as int?,
+      userId: json['user_id'] as int?,
       registeredEmail: json['registeredEmail'] as String?,
     );
 
 Map<String, dynamic> _$$_DataToJson(_$_Data instance) => <String, dynamic>{
-      'userId': instance.userId,
+      'user_id': instance.userId,
       'registeredEmail': instance.registeredEmail,
     };

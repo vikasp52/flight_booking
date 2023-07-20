@@ -53,10 +53,3 @@ class LoginCubit extends Cubit<LoginState> {
     );
   }
 }
-
-
-// {
-//     "status": false,
-//     "message": "The credentials are not authorized",
-//     "data": null
-// }

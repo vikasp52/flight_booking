@@ -126,12 +126,9 @@ class _LoginScreenState extends State<LoginScreen> {
                                   message: message,
                                 ),
                               ),
-                              validated: () {
-                                print('validated called');
-                                // RouteGenerator.pushReplacement(
-                                //   routeName: RouteGenerator.homeRoute,
-                                // );
-                              },
+                              validated: ()=>RouteGenerator.pushReplacement(
+                                  routeName: RouteGenerator.homeRoute,
+                                ),
                               orElse: () {},
                             );
                           },

@@ -208,6 +208,7 @@ Data _$DataFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Data {
+  @JsonKey(name: 'user_id')
   int? get userId => throw _privateConstructorUsedError;
   String? get registeredEmail => throw _privateConstructorUsedError;
 
@@ -221,7 +222,7 @@ abstract class $DataCopyWith<$Res> {
   factory $DataCopyWith(Data value, $Res Function(Data) then) =
       _$DataCopyWithImpl<$Res, Data>;
   @useResult
-  $Res call({int? userId, String? registeredEmail});
+  $Res call({@JsonKey(name: 'user_id') int? userId, String? registeredEmail});
 }
 
 /// @nodoc
@@ -259,7 +260,7 @@ abstract class _$$_DataCopyWith<$Res> implements $DataCopyWith<$Res> {
       __$$_DataCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int? userId, String? registeredEmail});
+  $Res call({@JsonKey(name: 'user_id') int? userId, String? registeredEmail});
 }
 
 /// @nodoc
@@ -290,11 +291,12 @@ class __$$_DataCopyWithImpl<$Res> extends _$DataCopyWithImpl<$Res, _$_Data>
 /// @nodoc
 @JsonSerializable()
 class _$_Data implements _Data {
-  const _$_Data({this.userId, this.registeredEmail});
+  const _$_Data({@JsonKey(name: 'user_id') this.userId, this.registeredEmail});
 
   factory _$_Data.fromJson(Map<String, dynamic> json) => _$$_DataFromJson(json);
 
   @override
+  @JsonKey(name: 'user_id')
   final int? userId;
   @override
   final String? registeredEmail;
@@ -333,12 +335,14 @@ class _$_Data implements _Data {
 }
 
 abstract class _Data implements Data {
-  const factory _Data({final int? userId, final String? registeredEmail}) =
-      _$_Data;
+  const factory _Data(
+      {@JsonKey(name: 'user_id') final int? userId,
+      final String? registeredEmail}) = _$_Data;
 
   factory _Data.fromJson(Map<String, dynamic> json) = _$_Data.fromJson;
 
   @override
+  @JsonKey(name: 'user_id')
   int? get userId;
   @override
   String? get registeredEmail;

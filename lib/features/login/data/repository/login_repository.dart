@@ -13,8 +13,6 @@ class LoginRepository {
     try {
       final response = await _loginDataSource.authorizedUser(login);
 
-      print('response is: ${response.toJson()}');
-
       if (response.status == false) {
         return Left(response.message ?? '');
       }

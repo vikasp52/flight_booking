@@ -5,8 +5,12 @@ import 'package:flight_booking/features/home/presentation/screens/screens.dart';
 import 'package:flight_booking/features/login/data/repository/login_repository.dart';
 import 'package:flight_booking/features/login/presentation/cubit/login_cubit.dart';
 import 'package:flight_booking/features/login/presentation/screens/login_screen.dart';
+import 'package:flight_booking/features/register/data/repository/registration_repository.dart';
+import 'package:flight_booking/features/register/presentation/cubit/registration_cubit.dart';
 import 'package:flight_booking/features/register/presentation/screens/screens.dart';
 import 'package:flight_booking/features/splash/splash.dart';
+import 'package:flight_booking/features/validate/data/repository/validation_repository.dart';
+import 'package:flight_booking/features/validate/presentation/cubit/otp_validation_cubit.dart';
 import 'package:flight_booking/features/validate/presentation/screens/screens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -62,10 +66,21 @@ class RouteGenerator {
         );
         break;
       case registerationRoute:
-        screen = const RegisterScreen();
+        screen = BlocProvider(
+          create: (context) => RegistrationCubit(
+            serviceLocator<RegistrationRepository>(),
+          ),
+          child: const RegisterScreen(),
+        );
         break;
       case otpVarificationRoute:
-        screen = const OtpValidationScreen();
+        screen = BlocProvider(
+          create: (context) => OtpValidationCubit(
+            otpValidationRepository: serviceLocator<OtpValidationRepository>(),
+            userId: routeSettings.arguments as int,
+          ),
+          child: const OtpValidationScreen(),
+        );
         break;
       case homeRoute:
         screen = const HomeScreen();

@@ -8,19 +8,28 @@ class CommonTextField extends StatelessWidget {
     required String lebel,
     required TextEditingController controller,
     required String hintText,
+    String? prefixText,
+    TextInputType? keyboardType,
     String? Function(String?)? validator,
+    int? maxLength,
     bool? obscureText,
   })  : _lebel = lebel,
         _controller = controller,
         _obscureText = obscureText,
         _hintText = hintText,
+        _prefixText = prefixText,
+        _keyboardType = keyboardType,
+        _maxLength = maxLength,
         _validator = validator;
 
   final String _lebel;
   final TextEditingController _controller;
   final String _hintText;
+  final String? _prefixText;
   final bool? _obscureText;
-  final String? Function(String?)?  _validator;
+  final TextInputType? _keyboardType;
+  final int? _maxLength;
+  final String? Function(String?)? _validator;
 
   @override
   Widget build(BuildContext context) {
@@ -38,8 +47,12 @@ class CommonTextField extends StatelessWidget {
           controller: _controller,
           validator: _validator,
           obscureText: _obscureText ?? false,
+          keyboardType: _keyboardType,
+          maxLength: _maxLength,
           decoration: InputDecoration(
             hintText: _hintText,
+            counterText: "",
+            prefixText: _prefixText,
           ),
         ),
         SizedBox(

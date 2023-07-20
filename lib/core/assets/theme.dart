@@ -29,6 +29,9 @@ final lightTheme = ThemeData(
   ),
   inputDecorationTheme: InputDecorationTheme(
     hintStyle: CustomTypography.hintLabelGrey,
+    prefixStyle: CustomTypography.hintLabelGrey.copyWith(
+      color: CustomColors.black,
+    ),
     border: OutlineInputBorder(
       borderRadius: BorderRadius.circular(30.w),
       borderSide: BorderSide(

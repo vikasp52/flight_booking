@@ -22,7 +22,7 @@ class LoginResponse with _$LoginResponse {
 @freezed
 class Data with _$Data {
   const factory Data({
-  int? userId,
+  @JsonKey(name: 'user_id') int? userId,
   String? registeredEmail,
   }) = _Data;
 
