@@ -1,14 +1,18 @@
 import 'package:flight_booking/core/assets/assets.dart';
+import 'package:flight_booking/core/di/inection_container.dart';
+import 'package:flight_booking/core/network/network.dart';
 import 'package:flight_booking/core/routing/routing.dart';
 import 'package:flight_booking/features/flight_booking/presentation/screens/screens.dart';
 import 'package:flight_booking/features/flight_results/presentation/screens/screens.dart';
 import 'package:flight_booking/features/home/presentation/screens/screens.dart';
 import 'package:flight_booking/features/login/presentation/screens/login_screen.dart';
+import 'package:flight_booking/features/splash/splash.dart';
 import 'package:flight_booking/features/validate/presentation/screens/screens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 void main() {
+  setUp(NetworkConstants.baseUrl);
   runApp(const MyApp());
 }
 
@@ -27,7 +31,7 @@ class MyApp extends StatelessWidget {
         onGenerateRoute: RouteGenerator.generateRoute,
         debugShowCheckedModeBanner: false,
       ),
-      child: const LoginScreen(),
+      child: const Splash(),
     );
   }
 }

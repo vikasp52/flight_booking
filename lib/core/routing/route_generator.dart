@@ -1,6 +1,9 @@
+import 'package:flight_booking/core/di/inection_container.dart';
 import 'package:flight_booking/features/flight_booking/presentation/screens/flight_booking.dart';
 import 'package:flight_booking/features/flight_results/presentation/screens/screens.dart';
 import 'package:flight_booking/features/home/presentation/screens/screens.dart';
+import 'package:flight_booking/features/login/data/repository/login_repository.dart';
+import 'package:flight_booking/features/login/presentation/cubit/login_cubit.dart';
 import 'package:flight_booking/features/login/presentation/screens/login_screen.dart';
 import 'package:flight_booking/features/register/presentation/screens/screens.dart';
 import 'package:flight_booking/features/splash/splash.dart';
@@ -47,8 +50,16 @@ class RouteGenerator {
     late Widget screen;
 
     switch (routeSettings.name) {
+      case initialRoute:
+        screen = const Splash();
+        break;
       case loginRoute:
-        screen = const LoginScreen();
+        screen = BlocProvider(
+          create: (context) => LoginCubit(
+            serviceLocator<LoginRepository>(),
+          ),
+          child: const LoginScreen(),
+        );
         break;
       case registerationRoute:
         screen = const RegisterScreen();

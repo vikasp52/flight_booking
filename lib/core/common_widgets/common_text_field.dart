@@ -8,16 +8,19 @@ class CommonTextField extends StatelessWidget {
     required String lebel,
     required TextEditingController controller,
     required String hintText,
+    String? Function(String?)? validator,
     bool? obscureText,
   })  : _lebel = lebel,
         _controller = controller,
         _obscureText = obscureText,
-        _hintText = hintText;
+        _hintText = hintText,
+        _validator = validator;
 
   final String _lebel;
   final TextEditingController _controller;
   final String _hintText;
   final bool? _obscureText;
+  final String? Function(String?)?  _validator;
 
   @override
   Widget build(BuildContext context) {
@@ -33,6 +36,7 @@ class CommonTextField extends StatelessWidget {
         ),
         TextFormField(
           controller: _controller,
+          validator: _validator,
           obscureText: _obscureText ?? false,
           decoration: InputDecoration(
             hintText: _hintText,
