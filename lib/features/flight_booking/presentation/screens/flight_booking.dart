@@ -4,8 +4,9 @@ import 'package:flight_booking/features/flight_booking/presentation/screens/widg
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class FlightBookingScreen extends StatelessWidget {
-  const FlightBookingScreen({super.key});
+class FlightBooking extends StatelessWidget {
+  const FlightBooking({super.key, required this.travellerCount});
+  final int travellerCount;
 
   @override
   Widget build(BuildContext context) {
@@ -15,37 +16,7 @@ class FlightBookingScreen extends StatelessWidget {
         preferredSize: Size.fromHeight(
           90.h,
         ),
-        child: AppBar(
-          centerTitle: true,
-          backgroundColor: CustomColors.primary,
-          leading: IconButton(
-            onPressed: () => Navigator.pop(context),
-            icon: const Icon(
-              Icons.arrow_back,
-              color: CustomColors.white,
-            ),
-          ),
-          elevation: 0.0,
-          actions: [
-            Padding(
-              padding: EdgeInsets.only(
-                right: 5.w,
-              ),
-              child: const CircleAvatar(
-                backgroundColor: CustomColors.skyBlue,
-                child: Icon(
-                  Icons.person,
-                ),
-              ),
-            ),
-          ],
-          title: Text(
-            'Your Flight Booking',
-            style: CustomTypography.nameLabel.copyWith(
-              color: CustomColors.white,
-            ),
-          ),
-        ),
+        child: const AppBarFlightBooking(),
       ),
       body: Padding(
         padding: EdgeInsets.symmetric(
@@ -86,6 +57,7 @@ class FlightBookingScreen extends StatelessWidget {
             ),
             Expanded(
                 child: ListView.builder(
+              itemCount: travellerCount,
               itemBuilder: (context, index) => Padding(
                 padding: EdgeInsets.symmetric(
                   horizontal: 10.h,
@@ -99,7 +71,7 @@ class FlightBookingScreen extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Traveler 1: Adult (Lead)',
+                          'Traveler ${index + 1}:',
                           style: CustomTypography.nameLabel,
                         ),
                         const Divider(
@@ -217,13 +189,3 @@ class FlightBookingScreen extends StatelessWidget {
     );
   }
 }
-
-
-
-//  SizedBox(
-//                     width: 100.w,
-//                     child: ElevatedButton(
-//                       onPressed: () {},
-//                       child: const Text('Next'),
-//                     ),
-//                   ),

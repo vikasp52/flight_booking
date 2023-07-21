@@ -1,5 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flight_booking/core/network/network.dart';
+import 'package:flight_booking/features/flight_results/data/data_source/data_source.dart';
+import 'package:flight_booking/features/flight_results/data/repository/repository.dart';
 import 'package:flight_booking/features/login/data/data_source/data_source.dart';
 import 'package:flight_booking/features/login/data/repository/login_repository.dart';
 import 'package:flight_booking/features/register/data/data_source/data_source.dart';
@@ -31,6 +33,14 @@ Future<void> setUp(String baseUrl) async {
   serviceLocator.registerLazySingleton<OtpValidationRepository>(
     () => OtpValidationRepository(
       OtpValidationDataSource(
+        serviceLocator<Dio>(),
+      ),
+    ),
+  );
+
+    serviceLocator.registerLazySingleton<FlightResultRepository>(
+    () => FlightResultRepository(
+      FlightResultDataSource(
         serviceLocator<Dio>(),
       ),
     ),

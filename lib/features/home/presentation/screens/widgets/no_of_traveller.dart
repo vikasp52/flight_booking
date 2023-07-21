@@ -8,11 +8,15 @@ class NoOfTraveller extends StatelessWidget {
     required this.title,
     required this.subTitle,
     required this.total,
+    required this.onAddPressed,
+    required this.onRemovePressed,
   });
 
   final String title;
   final String subTitle;
   final String total;
+  final VoidCallback onRemovePressed;
+  final VoidCallback onAddPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -24,9 +28,9 @@ class NoOfTraveller extends StatelessWidget {
           alignment: WrapAlignment.center,
           children: [
             IconButton(
-              onPressed: () {},
+              onPressed: onRemovePressed,
               icon: const Icon(
-                Icons.add,
+                Icons.remove,
                 color: CustomColors.grey,
               ),
             ),
@@ -40,9 +44,9 @@ class NoOfTraveller extends StatelessWidget {
               ),
             ),
             IconButton(
-              onPressed: () {},
+              onPressed: onAddPressed,
               icon: const Icon(
-                Icons.remove,
+                Icons.add,
                 color: CustomColors.grey,
               ),
             ),

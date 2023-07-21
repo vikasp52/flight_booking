@@ -18,7 +18,7 @@ class _SplashState extends State<Splash> {
       ),
       () {
         RouteGenerator.pushReplacement(
-          routeName: RouteGenerator.loginRoute,
+          routeName: RouteGenerator.homeRoute,
         );
       },
     );

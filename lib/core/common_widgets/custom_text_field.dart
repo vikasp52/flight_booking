@@ -4,18 +4,24 @@ import 'package:flutter/material.dart';
 class CutomTextField extends StatelessWidget {
   const CutomTextField({
     super.key,
-    required this.controller,
+    this.controller,
     required this.label,
     this.enabled,
+    this.readOnly,
     this.onTap,
+    this.validator,
+    this.initialValue,
     this.icon,
   });
 
-  final TextEditingController controller;
+  final TextEditingController? controller;
   final String label;
   final IconData? icon;
   final GestureTapCallback? onTap;
   final bool? enabled;
+  final bool? readOnly;
+  final String? Function(String?)? validator;
+  final String? initialValue;
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +46,10 @@ class CutomTextField extends StatelessWidget {
       child: TextFormField(
         controller: controller,
         enabled: enabled ?? true,
+        readOnly: readOnly ?? false,
         onTap: onTap,
+        validator: validator,
+        initialValue: initialValue,
         decoration: InputDecoration(
           label: Text(
             label,

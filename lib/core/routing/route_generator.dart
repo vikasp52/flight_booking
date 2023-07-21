@@ -1,6 +1,10 @@
 import 'package:flight_booking/core/di/inection_container.dart';
 import 'package:flight_booking/features/flight_booking/presentation/screens/flight_booking.dart';
+import 'package:flight_booking/features/flight_results/data/model/flight_search.dart';
+import 'package:flight_booking/features/flight_results/data/repository/repository.dart';
+import 'package:flight_booking/features/flight_results/presentation/cubit/flight_result_cubit.dart';
 import 'package:flight_booking/features/flight_results/presentation/screens/screens.dart';
+import 'package:flight_booking/features/home/presentation/cubit/flight_data_cubit.dart';
 import 'package:flight_booking/features/home/presentation/screens/screens.dart';
 import 'package:flight_booking/features/login/data/repository/login_repository.dart';
 import 'package:flight_booking/features/login/presentation/cubit/login_cubit.dart';
@@ -83,13 +87,24 @@ class RouteGenerator {
         );
         break;
       case homeRoute:
-        screen = const HomeScreen();
+        screen = BlocProvider(
+          create: (context) => FlightDataCubit(),
+          child: const HomeScreen(),
+        );
         break;
       case flightResultRoute:
-        screen = const FlightResultScreen();
+        screen = BlocProvider(
+          create: (context) => FlightResultCubit(
+            flightResultRepository: serviceLocator<FlightResultRepository>(),
+            flightSearch: routeSettings.arguments as FlightSearch,
+          ),
+          child: const FlightResultScreen(),
+        );
         break;
       case flightBookingRoute:
-        screen = const FlightBookingScreen();
+        screen =  FlightBooking(
+          travellerCount: routeSettings.arguments as int,
+        );
         break;
 
       default:

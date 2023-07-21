@@ -1,3 +1,9 @@
 export 'custom_menu_icon.dart';
 export 'custom_tab.dart';
 export 'no_of_traveller.dart';
+export 'flight_type.dart';
+export 'home_tab_bar.dart';
+export 'home_app_bar.dart';
+export 'best_places.dart';
+export 'departure_arrival.dart';
+export 'flying_to_from.dart';
