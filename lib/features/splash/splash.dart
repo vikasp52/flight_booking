@@ -1,3 +1,4 @@
+import 'package:flight_booking/core/assets/assets.dart';
 import 'package:flight_booking/core/routing/routing.dart';
 import 'package:flutter/material.dart';
 
@@ -9,7 +10,7 @@ class Splash extends StatefulWidget {
 }
 
 class _SplashState extends State<Splash> {
-    @override
+  @override
   void initState() {
     super.initState();
     Future.delayed(
@@ -18,17 +19,20 @@ class _SplashState extends State<Splash> {
       ),
       () {
         RouteGenerator.pushReplacement(
-          routeName: RouteGenerator.homeRoute,
+          routeName: RouteGenerator.loginRoute,
         );
       },
     );
   }
+
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: Center(
         child: Text(
-          'Innfvation\nFactory',
+          'Innovation\nFactory',
+          textAlign: TextAlign.center,
+          style: CustomTypography.headingBlue,
         ),
       ),
     );
